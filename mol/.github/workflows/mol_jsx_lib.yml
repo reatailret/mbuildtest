@@ -1,0 +1,34 @@
+name: mol_jsx_lib
+
+on:
+  workflow_dispatch:
+  push:
+    branches: 
+      - master
+    paths:
+      - '.github/workflows/mol_jsx_lib.yml'
+      - 'jsx/**'
+      - 'wire/**'
+      - 'build/**'
+  pull_request:
+  schedule:
+    - cron: "0 7 * * *"
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    
+    - name: Build apps
+      uses: hyoo-ru/mam_build@master2
+      with:
+        package: mol
+        modules: jsx/lib
+    
+    - uses: JS-DevTools/npm-publish@v1
+      if: ${{ github.ref == 'refs/heads/master' }}
+      with:
+        token: ${{ secrets.NPM_AUTH_TOKEN }}
+        package: ./mol/jsx/lib/-/package.json

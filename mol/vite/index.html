@@ -1,0 +1,22 @@
+<!doctype html>
+<html mol_view_root lang="en">
+  <head>
+    <meta charset="UTF-8" />
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite MAM</title>
+  </head>
+  <body mol_view_root>
+    
+	<div mol_view_root="$mol_vite"></div>
+	<script type="module">
+		import '/virtual:molmain-module:$mol_vite'
+
+    document?.addEventListener(
+		'DOMContentLoaded',
+		()=> $mol_view.autobind(),
+		{ once: true },
+	)
+	</script>
+  </body>
+</html>

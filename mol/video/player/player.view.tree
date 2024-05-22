@@ -1,0 +1,22 @@
+$mol_video_player $mol_view
+	dom_name \video
+	playing? false
+	volume? 0
+	time? 0
+	duration 0
+	attr *
+		src <= uri \
+		controls <= controls true
+		autoplay <= autoplay true
+		playsinline <= inline true
+		loop <= loop false
+		poster <= poster \
+	field *
+		srcObject <= stream null
+	event *
+		volumechange?event <=> revolume?event null
+		timeupdate?event <=> retime?event null
+		durationchange?event <=> redurate?event null
+		playing?event <=> play_started?event null
+		play?event <=> play?event null
+		pause?event <=> pause?event null

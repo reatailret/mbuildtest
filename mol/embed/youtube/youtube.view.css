@@ -1,0 +1,22 @@
+[mol_embed_youtube] {
+	padding: 0;
+	max-width: 100%;
+}
+
+[mol_embed_youtube_image] {
+	flex: auto 1 1;
+}
+
+[mol_embed_youtube_hint] {
+	position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 50%;
+    height: 50%;
+    opacity: 0.3;
+    transform: translate(-50%, -50%);
+}
+
+[mol_embed_youtube]:hover [mol_embed_youtube_hint] {
+	opacity: .6;
+}
